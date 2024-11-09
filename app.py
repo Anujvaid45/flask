@@ -1,16 +1,11 @@
 import os
 import scipy.io
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import CORS
 from io import BytesIO
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
-
-# Route for home page
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 # Route to handle file upload and send EEG data points
 @app.route('/upload', methods=['POST'])
